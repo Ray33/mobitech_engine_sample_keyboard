@@ -20,6 +20,7 @@ import io.mobitech.shoppingengine.MobitechOffersManager;
 
 public class MainActivity extends AppCompatActivity {
 
+    private final static String PUBLISHER_KEY = "tentica";
     static int i=0;
     EditText mEditText;
     TextView mTextView;
@@ -60,7 +61,7 @@ public class MainActivity extends AppCompatActivity {
         //*******************************************************
         //init mobitech Engine  - with callback
         //*******************************************************
-        final MobitechOffersManager shoppingEngine = MobitechOffersManager.build(this, "us", "tentica", new ICallbackProducts() {
+        final MobitechOffersManager shoppingEngine = MobitechOffersManager.build(this,PUBLISHER_KEY , new ICallbackProducts() {
             @Override
             public void execute(final Products coupons) {
                 MainActivity.this.runOnUiThread(new Runnable() {
@@ -91,7 +92,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void afterTextChanged(Editable s) {
                 Log.v("TAG", "afterTextChanged : " + s);
-                shoppingEngine.putInput(s.toString(), Locale.ENGLISH, "com.android.chrome", "", "");
+                shoppingEngine.putInput(s.toString(), Locale.ENGLISH, "com.android.chrome", "", "","in_app_main");
             }
         });
     }
