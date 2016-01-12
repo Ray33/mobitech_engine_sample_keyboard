@@ -3,6 +3,7 @@ package io.mobitech.keyboarddemoapp;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
+import android.content.Context;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
@@ -63,7 +64,7 @@ public class MainActivity extends AppCompatActivity {
         //*******************************************************
         final MobitechOffersManager shoppingEngine = MobitechOffersManager.build(this,PUBLISHER_KEY , new ICallbackProducts() {
             @Override
-            public void execute(final Products coupons) {
+            public void execute(final Products coupons, Context context) {
                 MainActivity.this.runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
