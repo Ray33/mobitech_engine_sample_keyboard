@@ -1,5 +1,6 @@
 package io.mobitech.keyboarddemoapp;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
@@ -63,11 +64,11 @@ public class MainActivity extends AppCompatActivity {
         //*******************************************************
         final MobitechOffersManager shoppingEngine = MobitechOffersManager.build(this,PUBLISHER_KEY , new ICallbackProducts() {
             @Override
-            public void execute(final Products coupons) {
+            public void execute(final Products products, Context context) {
                 MainActivity.this.runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
-                        mTextView.setText("Found " + coupons.size() + " Offers ! words: " + coupons.get(0).getKeywords());
+                        mTextView.setText("Found " + products.size() + " Offers ! words: " + products.get(0).getKeywords());
                     }
                 });
             }
