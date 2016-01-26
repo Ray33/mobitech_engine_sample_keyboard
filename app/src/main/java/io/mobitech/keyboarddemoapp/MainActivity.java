@@ -101,7 +101,7 @@ public class MainActivity extends AppCompatActivity {
     private void initWordGeneratorComponents() {
         sleepArray[0] = 1000;
         sleepArray[1] = 1000;
-        sleepArray[2] = 6000;
+        sleepArray[2] = 4500;
 
         Button button = (Button) MainActivity.this.findViewById(R.id.button);
         button.setOnClickListener(new View.OnClickListener() {
