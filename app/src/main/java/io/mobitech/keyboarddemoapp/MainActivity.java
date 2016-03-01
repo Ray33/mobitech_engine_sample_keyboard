@@ -68,7 +68,9 @@ public class MainActivity extends AppCompatActivity {
                 MainActivity.this.runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
-                        mTextView.setText("Found " + products.size() + " Offers ! words: " + products.get(0).getKeywords());
+                        if (products.productsResponseType == Products.PRODUCTS_RESPONSE_TYPE.FOUND_PRODUCTS){
+                            mTextView.setText("Found " + products.size() + " Offers ! words: " + products.get(0).getKeywords());
+                        }
                     }
                 });
             }
