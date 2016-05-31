@@ -23,7 +23,7 @@ dependencies {
     //compile fileTree(dir: 'libs', include: ['*.jar'])
     testCompile 'junit:junit:4.12'
     compile 'com.android.support:appcompat-v7:23.1.1'
-    compile(group: 'io.mobitech', name: 'shoppingengine', version: '3.2.6', ext: 'aar'){
+    compile(group: 'io.mobitech', name: 'shoppingengine', version: '3.+', ext: 'aar'){
         transitive=true;
     }
 }
